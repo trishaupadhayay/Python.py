@@ -1,0 +1,256 @@
+#Handling Directories & file
+
+import os,shutil,pathlib
+
+
+print(os.getcwd())# current working directory
+
+os.mkdir("21 oct")# create a directory
+
+os.rmdir("21 oct")# remove a directory
+
+
+print(os.listdir(",")) # list file and directories
+
+shutil.rmtree("21 oct") # remove everything in directories
+
+os.rename("csa.txt","copa.txt")
+
+shutil.copy("aipa2.txt","aipa3.txt")
+
+# shutil.move("a.txt","b.txt")
+
+with open ("21Oct/22Oct/aipa/aipa.txt","w") as file:
+    file.write("Hello")
+
+from pathlib import Path
+
+filename=input("enter the filename:")
+
+path=Path(filename)
+
+if path.exists():
+    print("File exists")
+else:
+    print("File does not exist")    
+
+
+try:
+    x=10
+    y=0
+    print(x / y)
+except ZeroDivisionError:#it handles a macthcing exception
+    print("No. cannot be devided by 0")
+
+
+a=10
+b=10
+print(a*b)       
+
+
+
+x="Trisha"
+y=17
+
+print(x-y)
+
+
+std={
+    "name":"Trisha",
+    "Trade":"AIPA",
+    "Session":2026}
+
+print(std["Age"])
+
+
+
+try:
+    age=int(input("Enter you age:"))
+    print("Age is ",age)
+
+except ValueError:
+    print("Please enter a valid whole no.")
+
+
+try:
+    a=int(input("Enter first no."))
+    b=int(input("Enter second no."))
+
+    print(a/b)
+
+except ValueError:
+    print("Please enter valind inteegrs")
+
+except ZeroDivisionError:
+    print("cannot divide by 0.")
+
+print("Successful.")
+
+
+
+
+
+try:
+    num=int(input("enter number:"))
+
+except ValueError:
+    print("Ivaild input.")
+
+else: 
+    print("Square of no.:", num ** 2)
+
+finally:
+    print("Run Successful!")
+
+
+
+try:
+    marks=int(input("Enter your marks:"))
+    if marks <0 or marks >100:
+         raise ValueError("Marks cannot be less than 0 or more than 100.")
+
+except ValueError as Trisha:
+     print("invaild marks",Trisha)
+
+else:
+     print("Marks accepted:",marks)
+
+finally:
+     print("coding completed")
+
+
+
+class AIPAError (Exception): 
+    pass
+try:
+    eligible=int(input("enter you qualification:"))
+    if eligible < 10:
+        raise AIPAError("You are not qualified for AIPA admission.")
+    print("you are Eligible.")
+except ValueError:
+    print("please  neter vaild number.")
+
+except AIPAError as ai:
+    print("Eligibility issue:",ai)
+
+
+
+try: 
+    num=int (input ("enter number:"))
+    print(100/num)
+
+except Exception as e:
+    print("Error occured:",e)
+             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class aipa :
+    pass
+
+std1=aipa()
+std2=aipa()
+
+
+print(std1)
+print(std2)
+
+
+
+
+
+
+class student:
+    def __init__(self):
+
+        self.name= "Trisha"
+        self_trade="AIPA"
+        self__marks=65
+
+    def show_marks(self):
+        return self.__marks
+    
+    std= student()
+    print(std.name)
+    print(std._trade)
+    print(std.__marks())
+
+    
+
+
+
+
+class blankaccount:
+    def __init(self, name,balance):
+
+        self.name= name
+        self,__balance=balance
+    def deposit (self,account):
+        if amount >0:
+            self.__balance+=amount
+            print ("Deposit successful!")
+        else:
+            print ("invaild amount!")
+    def withdraw(self,amount):
+        if amount >0 and amount <= self.__balance:
+            self.__balance-= amount
+            print("withdraw successful!")
+
+
+
+
+
+
+
+class BankAccount:
+    def __init__(self, accountname, balance):
+        self.accountname=accountname
+        self.__balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            print("Deposit successful!")
+        else:
+            print("Invalid amount!")
+
+    def withdrawl(self, amount):
+        if amount <= 0:
+            print("Invalid amount!")
+        elif amount <= self.__balance:
+            self.__balance -= amount
+            print("Withdrawl successful!")
+        else:
+            print("Insufficient amount!")
+
+    def check_balance(self):
+        return self.__balance
+        print(user.check__balance())
+
+
+User = BankAccount("Shivani", 100)
+
+print(User.accountname)
+User.deposit(1000)
+User.withdrawl(500)
+print(User.check_balance())
+
+
